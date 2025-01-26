@@ -1,0 +1,28 @@
+{
+  "name": "jerud-moyer-dev-api",
+  "version": "1.0.0",
+  "description": "backend for jerud-moyer-dev apps",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc",
+    "start": "node -r dotenv/config dist/server.js",
+    "dev": "nodemon -r dotenv/config server.ts"
+  },
+  "author": "Jerud Moyer",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.10",
+    "@types/pg": "^8.11.11",
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
