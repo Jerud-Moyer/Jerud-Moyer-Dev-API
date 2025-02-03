@@ -1,9 +1,12 @@
 import express, {  Express, Request, Response } from 'express'
 import factsController from './portfolio/controllers/fact'
 import mailController from './mailer/controllers/email'
+import cors from 'cors';
 
 
 export const app: Express = express()
+
+app.use(cors())
 
 app.get('/', (req: Request, res: Response) => {
   res.send('WE GOT AN EXPRESS TS APP!')
