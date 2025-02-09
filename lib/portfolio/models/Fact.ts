@@ -11,9 +11,9 @@ class Fact {
   constructor(row: RandomFact) {
     this.id = row.id;
     this.type = row.type;
-    this.colorCode = row.colorCode;
+    this.colorCode = row.color_code;
     this.text = row.text;
-    this.imageUrl = row.imageUrl;
+    this.imageUrl = row.image_url;
   }
 
   static async insert(fact: RandomFact) {
