@@ -1,7 +1,8 @@
 import express, {  Express, Request, Response } from 'express'
+import cors from 'cors';
 import factsController from './portfolio/controllers/fact'
 import mailController from './mailer/controllers/email'
-import cors from 'cors';
+import announcementsController from './amphead/controllers/announcements'
 
 
 export const app: Express = express()
@@ -13,6 +14,11 @@ app.get('/', (req: Request, res: Response) => {
   res.send('WE GOT AN EXPRESS TS APP!')
 })
 
+// mega API for J.M.Dev
+app.use('/api/v1/mail', mailController)
+
+// portfolio site
 app.use('/api/v1/facts', factsController)
 
-app.use('/api/v1/mail', mailController)
+// amphead
+app.use('api/v1/amphead/announcements', announcementsController)

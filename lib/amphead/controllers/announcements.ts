@@ -3,7 +3,7 @@ import Announcement from '../models/Announcement';
 import { PublicAnnouncement } from '../types/types';
 
 
-module.exports = Router()
+export default Router()
   .post('/', (req, res, next) => {
     Announcement
       .insert(req.body)
