@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer'
 
 const emailRouter = Router()
   .post('/', async(req: Request, res: Response, next) => {
-    console.log('REQUEST HERE =>  ', req.body)
+    console.log('MAIL REQUEST =>  ', req.body)
     const name: string = req.body.name
     const receiver: string = req.body.receiver
     const senderEmail: string = req.body.senderEmail
