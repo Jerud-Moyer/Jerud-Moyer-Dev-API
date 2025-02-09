@@ -1,5 +1,5 @@
 import pool from "../../utils/pool";
-import { RandomFact } from "../types/types";
+import { ClientSideFact, ServerSideFact } from "../types/types";
 
 class Fact {
   id: number;
@@ -8,7 +8,7 @@ class Fact {
   text: string;
   imageUrl: string;
 
-  constructor(row: RandomFact) {
+  constructor(row: ServerSideFact) {
     this.id = row.id;
     this.type = row.type;
     this.colorCode = row.color_code;
@@ -16,7 +16,7 @@ class Fact {
     this.imageUrl = row.image_url;
   }
 
-  static async insert(fact: RandomFact) {
+  static async insert(fact: ClientSideFact) {
     const { rows } = await pool.query(
       `INSERT into facts (type, color_code, text, image_url)
       VALUES ($1, $2, $3, $4) RETURNING *`,
@@ -55,7 +55,7 @@ class Fact {
     else return new Fact(rows[0]);
   }
 
-  static async update(id: number, fact: RandomFact) {
+  static async update(id: number, fact: ClientSideFact) {
     const { rows } = await pool.query(
       `UPDATE facts
       SET type=$1,
