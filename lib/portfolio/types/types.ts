@@ -1,7 +1,7 @@
 export interface RandomFact {
   id: number;
   type: string;
-  colorCode: string;
+  color_code: string;
   text: string;
-  imageUrl: string;
+  image_url: string;
 }
