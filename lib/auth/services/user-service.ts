@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import User from '../models/User';
-import { ClientSideUser, RequestUser } from '../types/types';
+import { RequestUser } from '../types/types';
 
 const signup = async({  email, password, firstName }: RequestUser, client: String) => {
   if(password) {

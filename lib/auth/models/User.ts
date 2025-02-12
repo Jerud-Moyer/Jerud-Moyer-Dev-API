@@ -1,5 +1,5 @@
 import pool from '../../utils/pool'
-import { ClientSideUser, RequestUser, ServerSideUser } from '../types/types';
+import { RequestUser, ServerSideUser } from '../types/types';
 
 export default class User {
   id: string;
