@@ -42,8 +42,11 @@ export default Router()
   })
   
   .post('/login', (req: Request<AuthParams>, res, next) => {
+    console.log('HIT LOGIN ROUTE!')
     const client = req.params.client
     const cookiePlease: Boolean = req.params.cookiePlease || false
+
+    console.log('CLIENT => ', client)
 
     UserService
       .authorize(req.body, client)
