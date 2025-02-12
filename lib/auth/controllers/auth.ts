@@ -16,7 +16,7 @@ const setSessionCookie = (res: Response, user: User) => {
   });
 };
 
-module.exports = Router()
+export default Router()
   .post('/signup', (req: Request<AuthParams>, res, next) => {
     console.log('controller => ', req.body)
     const client: string = req.params.client

@@ -1,7 +1,8 @@
 import express, {  Express, Request, Response } from 'express'
 import cors from 'cors';
-import factsController from './portfolio/controllers/fact'
 import mailController from './mailer/controllers/email'
+import authController from './auth/controllers/auth'
+import factsController from './portfolio/controllers/fact'
 import announcementsController from './amphead/controllers/announcements'
 
 
@@ -16,9 +17,10 @@ app.get('/', (req: Request, res: Response) => {
 
 // mega API for J.M.Dev
 app.use('/api/v1/mail', mailController)
+app.use('/api/v1/auth', authController)
 
 // portfolio site
 app.use('/api/v1/facts', factsController)
 
 // amphead
-app.use('api/v1/amphead/announcements', announcementsController)
+app.use('/api/v1/amphead/announcements', announcementsController)
