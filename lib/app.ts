@@ -1,4 +1,5 @@
 import express, {  Express, Request, Response } from 'express'
+import cookieParser from 'cookie-parser'
 import cors from 'cors';
 import mailController from './mailer/controllers/email'
 import authController from './auth/controllers/auth'
@@ -9,7 +10,11 @@ import announcementsController from './amphead/controllers/announcements'
 export const app: Express = express()
 
 app.use(express.json())
-app.use(cors())
+app.use(cookieParser())
+app.use(cors({
+  origin: true,
+  credentials: true
+}))
 
 app.get('/', (req: Request, res: Response) => {
   res.send('WE GOT AN EXPRESS TS APP!')
