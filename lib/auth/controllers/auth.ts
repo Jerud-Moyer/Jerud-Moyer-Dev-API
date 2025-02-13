@@ -2,7 +2,7 @@ import { Request, Router } from 'express';
 import ensureAuth from '../middleware/ensure-auth';
 import UserService from '../services/user-service';
 import { Response } from 'express-serve-static-core';
-import { AuthParams, AuthRequest, RequestUser } from '../types/types';
+import { AuthRequest } from '../types/types';
 import User from '../models/User';
 import userService from '../services/user-service';
 
@@ -17,10 +17,9 @@ const setSessionCookie = (res: Response, user: User) => {
 };
 
 export default Router()
-  .post('/signup', (req: Request<AuthParams>, res, next) => {
-    console.log('controller => ', req.body)
-    const client: string = req.params.client
-    const cookiePlease: Boolean = req.params.cookiePlease || false
+  .post('/signup', (req: Request, res, next) => {
+    const client: string = req.body.client
+    const cookiePlease: Boolean = req.body.cookiePlease || false
 
     UserService
       .signup(req.body, client)
@@ -41,12 +40,9 @@ export default Router()
       .catch(next);
   })
   
-  .post('/login', (req: Request<AuthParams>, res, next) => {
-    console.log('HIT LOGIN ROUTE!')
-    const client = req.params.client
-    const cookiePlease: Boolean = req.params.cookiePlease || false
-
-    console.log('CLIENT => ', client)
+  .post('/login', (req: Request, res, next) => {
+    const client: string = req.body.client
+    const cookiePlease: Boolean = req.body.cookiePlease || false
 
     UserService
       .authorize(req.body, client)

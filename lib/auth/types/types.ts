@@ -8,23 +8,11 @@ export type ServerSideUser = {
   first_name: string
 }
 
-export type ClientSideUser = {
-  id: string,
-  email: string,
-  passwordHash?: string,
-  firstName: string | null
-}
-
 export type RequestUser = {
   email: string,
   password?: string,
   passwordHash?: string,
   firstName?: string
-}
-
-export interface AuthParams {
-  client: string;
-  cookiePlease?: Boolean;
 }
 
 export interface AuthRequest extends Request {
