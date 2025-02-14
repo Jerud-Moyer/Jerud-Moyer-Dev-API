@@ -63,8 +63,8 @@ export default class Artwork {
       is_featured, 
       series_id,
       eskart_series.name as series_name
-      FROM "eskart_art_works"
-      INNER JOIN eskart_series on "eskart_art_works".series_id=series.id
+      FROM eskart_art_works
+      INNER JOIN eskart_series on "eskart_art_works".series_id=eskart_series.id
       `
     );
 
