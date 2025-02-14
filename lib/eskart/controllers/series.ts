@@ -3,7 +3,7 @@ import Series from '../models/Series';
 import deleteJpg from '../middleware/jpg-delete';
 import ArtWorkService from '../services/artwork-service';
 
-module.exports = Router()
+export default Router()
   .get('/', (req, res, next) => {
     Series.getAllSeries()
       .then(series => res.send(series))
