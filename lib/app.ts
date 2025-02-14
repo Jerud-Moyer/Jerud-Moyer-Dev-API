@@ -5,6 +5,9 @@ import mailController from './mailer/controllers/email'
 import authController from './auth/controllers/auth'
 import factsController from './portfolio/controllers/fact'
 import announcementsController from './amphead/controllers/announcements'
+import artworksController from './eskart/controllers/artwork'
+import seriesController from './eskart/controllers/series'
+
 
 
 export const app: Express = express()
@@ -29,3 +32,7 @@ app.use('/api/v1/facts', factsController)
 
 // amphead
 app.use('/api/v1/amphead/announcements', announcementsController)
+
+// eskart
+app.use('/api/v1/eskart/art-works', artworksController)
+app.use('/api/v1/eskart/series', seriesController)
