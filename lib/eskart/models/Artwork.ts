@@ -73,7 +73,7 @@ export default class Artwork {
 
   static async updateIsFeatured (boolean: Boolean, id: number) {
     const { rows } = await pool.query(
-      `UPDATE art_works
+      `UPDATE eskart_art_works
       SET is_featured=$1
       WHERE id=$2
       RETURNING *
@@ -86,7 +86,7 @@ export default class Artwork {
 
   static async updateArtWork (id: number, artWork: ArtworkRow) {
     const { rows } = await pool.query(
-      `UPDATE art_works
+      `UPDATE eskart_art_works
       SET title=$1,
           medium=$2,
           dimensions=$3,
@@ -112,7 +112,7 @@ export default class Artwork {
 
   static async deleteWork (id: number) {
     const { rows } = await pool.query(
-      `DELETE FROM art_works
+      `DELETE FROM eskart_art_works
       WHERE id=$1
       RETURNING *
       `,
