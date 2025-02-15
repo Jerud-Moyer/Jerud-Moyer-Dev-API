@@ -5,7 +5,7 @@ import ImageService from '../../services/s3-image-service';
 import jpgDelete from '../middleware/jpg-delete';
 import { MemeContentType } from '../types.types';
 
-module.exports = Router()
+export default Router()
   .get('/', async(req, res, next) => {
     try {
       const memeArr = randomizer();
