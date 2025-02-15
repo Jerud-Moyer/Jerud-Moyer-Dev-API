@@ -12,7 +12,7 @@ const breakoutToken = (bearerToken: string): string => {
 
 export default (req: AuthRequest, res: Response, next: NextFunction) => {
   let session = null
-  const cookiePlease: Boolean = req.cookiePlease || false
+  const cookiePlease = Boolean(req.params.coookiePlease)
   if(cookiePlease) {
     session = req.cookies.session;
   } else {
