@@ -7,6 +7,7 @@ import factsController from './portfolio/controllers/fact'
 import announcementsController from './amphead/controllers/announcements'
 import artworksController from './eskart/controllers/artwork'
 import seriesController from './eskart/controllers/series'
+import memeController from './nerdmeme/controllers/meme'
 
 
 
@@ -36,3 +37,6 @@ app.use('/api/v1/amphead/announcements', announcementsController)
 // eskart
 app.use('/api/v1/eskart/art-works', artworksController)
 app.use('/api/v1/eskart/series', seriesController)
+
+// nerdmeme
+app.use('/api/v1/nerdmeme/meme', memeController)
