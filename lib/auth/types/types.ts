@@ -16,5 +16,6 @@ export type RequestUser = {
 }
 
 export interface AuthRequest extends Request {
-  verification?: JwtPayload | null
+  verification?: JwtPayload | null;
+  cookiePlease?: Boolean;
 }
