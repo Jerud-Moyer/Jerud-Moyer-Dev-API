@@ -61,6 +61,6 @@ export default Router()
       .catch(next);
   })
 
-  .get('/verify', ensureAuth, (req: AuthRequest, res) => {
+  .get('/verify:cookiePlease?', ensureAuth, (req: AuthRequest, res) => {
     res.send(req.verification);
   });
