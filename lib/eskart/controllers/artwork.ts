@@ -22,11 +22,11 @@ export default Router()
   })
 
   .post('/', imageUpload, (req, res) => {
-
+    console.log('we hit this????')
     const imageData = req.body.imageData;
     Artwork.insert(imageData)
       .then(val => res.send(val))
-      .catch(err => console.log(err));
+      .catch(err => console.log(`insert err => ${err}`));
   })
 
   .put('/:id', updatePublicId, (req, res) => {

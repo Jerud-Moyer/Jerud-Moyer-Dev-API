@@ -9,8 +9,6 @@ import artworksController from './eskart/controllers/artwork'
 import seriesController from './eskart/controllers/series'
 import memeController from './nerdmeme/controllers/meme'
 
-
-
 export const app: Express = express()
 
 app.use(express.json())

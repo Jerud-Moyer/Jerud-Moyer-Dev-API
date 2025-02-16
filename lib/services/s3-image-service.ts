@@ -1,4 +1,5 @@
-import fetch from 'node-fetch';
+//import fetch from 'node-fetch';
+// const fetch = (...args: any[]) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 import s3 from '../utils/aws-config';
 import crypto from 'crypto';
 import { DatabaseUrl } from 'aws-sdk/clients/appflow';
@@ -21,6 +22,7 @@ const getBuffer = async(inputUrl: DatabaseUrl): Promise<Buffer<ArrayBuffer>> => 
     const byteString = Buffer.from(data, 'base64');
     return byteString;
   } else {
+    const { default: fetch } = await import('node-fetch');
     const response = await fetch(inputUrl);
     const blob = await response.blob();
     const arrayBuffer = await blob.arrayBuffer();
