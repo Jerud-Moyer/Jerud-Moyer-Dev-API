@@ -12,7 +12,6 @@ const breakoutToken = (bearerToken: string): string => {
 
 export default (req: AuthRequest, res: Response, next: NextFunction) => {
   let session = null
-  console.log('CP in middleware => ', req.params.cookiePlease)
   const cookiePlease = Boolean(req.params.cookiePlease)
   if(cookiePlease) {
     session = req.cookies.session;
