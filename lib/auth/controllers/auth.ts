@@ -62,5 +62,6 @@ export default Router()
   })
 
   .get('/verify:cookiePlease?', ensureAuth, (req: AuthRequest, res) => {
+    console.log('params at endpoint => ', req.params)
     res.send(req.verification);
   });
