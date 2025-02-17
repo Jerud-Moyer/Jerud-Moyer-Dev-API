@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import ImageService from '../../services/s3-image-service';
 
-export default (req: Request, res: Response, next: NextFunction) => {
+export default function(req: Request, res: Response, next: NextFunction) {
   const oldImageUrl = `${req.params.oldImageKey}.jpg`;
   if(
     req.params.contentType === 'images' && 
