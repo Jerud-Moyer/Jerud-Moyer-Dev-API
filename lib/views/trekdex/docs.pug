@@ -1,0 +1,26 @@
+doctype html
+html
+  head 
+    style
+      include ./style.css
+    style.
+      @font-face {
+        font-family: 'Roddenberry';
+        src: url('/fonts/Roddenberry-DgLm.ttf') format('truetype')
+      }
+    title= 'TrekDex Docs'
+  body 
+    h1= title
+    h1= message
+    ul
+      h3 base url: https://jerud-moyer-dev-api-aea90f17034e.herokuapp.com/api/v1/trekdex/characters
+      h2 sample queries
+      li GET '/' -  get all characters
+      li GET '/paginated?page=*number*&limit=*number*' - get paginated characters 
+      li GET '/name/*name here*' - get a character by name
+      li GET '/filter?name=*name or partial name*' - get all matching characters
+      li GET '/filter?origin=*origin or partial origin*' - get all matching characters
+      li GET '/filter?race=*race or partial race*' - get all matching characters
+      li GET '/filter?affiliation=*affiliation or partial affiliation*' - get all matching characters
+    h2(class='about') about the creator of this API: 
+      a(href='https://jerud-moyer.dev/') jerud-moyer.dev
