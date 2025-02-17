@@ -3,7 +3,7 @@ import { Router } from 'express';
 export default Router()
   .get('/', (req, res) => {
     res.render(
-      'trekdex/docs',
+      'docs',
       { 
         title: 'Trek-Dex-API', 
         message: 'documentation' 
