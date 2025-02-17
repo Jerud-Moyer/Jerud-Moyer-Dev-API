@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc",
+    "postbuild": "cp -r src/lib/views dist/lib/views",
     "start": "node -r dotenv/config dist/server.js",
     "dev": "nodemon -r dotenv/config server.ts"
   },
