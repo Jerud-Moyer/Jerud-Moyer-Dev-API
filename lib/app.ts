@@ -21,7 +21,7 @@ app.use(cors({
 }))
 app.use(express.static('public'));
 
-app.set('views', [path.join(__dirname, 'views'), path.join(__dirname, 'views/trekdex')]);
+app.set('views', [path.join(__dirname, 'views/'), path.join(__dirname, 'views/trekdex/')]);
 app.set('view engine', 'pug');
 
 app.get('/', (req: Request, res: Response) => {
