@@ -44,7 +44,7 @@ app.use('/api/v1/eskart/art-works', artworksController)
 app.use('/api/v1/eskart/series', seriesController)
 
 // ventrella
-app.use('api/v1/ventrella', ventrellaController)
+app.use('/api/v1/ventrella', ventrellaController)
 
 // nerdmeme
 app.use('/api/v1/nerdmeme/meme', memeController)
