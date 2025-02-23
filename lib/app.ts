@@ -8,6 +8,7 @@ import factsController from './portfolio/controllers/fact'
 import announcementsController from './amphead/controllers/announcements'
 import artworksController from './eskart/controllers/artwork'
 import seriesController from './eskart/controllers/series'
+import ventrellaController from './ventrella/controllers/main'
 import memeController from './nerdmeme/controllers/meme'
 import trekDexController from './trekdex/controllers/main'
 
@@ -41,6 +42,9 @@ app.use('/api/v1/amphead/announcements', announcementsController)
 // eskart
 app.use('/api/v1/eskart/art-works', artworksController)
 app.use('/api/v1/eskart/series', seriesController)
+
+// ventrella
+app.use('api/vi/ventrella', ventrellaController)
 
 // nerdmeme
 app.use('/api/v1/nerdmeme/meme', memeController)
