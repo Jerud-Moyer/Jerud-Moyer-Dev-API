@@ -1,4 +1,4 @@
-import pool from "../../utils/pool.js";
+import pool from "../../utils/pool";
 
 export class Blog {
   id: number;
