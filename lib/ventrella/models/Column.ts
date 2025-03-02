@@ -59,7 +59,6 @@ export class Column {
       `,
       [blogId]
     )
-    console.log('PUBLISHED IN MODEL => ', rows)
     return rows.map(row => new Column(row))
   }
 
