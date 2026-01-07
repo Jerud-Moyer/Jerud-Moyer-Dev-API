@@ -54,4 +54,4 @@ app.use('/api/v1/nerdmeme/meme', memeController)
 app.use('/api/v1/trekdex', trekDexController)
 
 // home theater
-app.use('/api/v1/home-theater')
+app.use('/api/v1/home-theater', homeTheaterController)
