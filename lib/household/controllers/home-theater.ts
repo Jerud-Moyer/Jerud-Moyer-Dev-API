@@ -9,7 +9,7 @@ export default Router()
       response = await fetch('https://app1.sofabaton.com/app/keypress?node_id=fpRXbAn3WZxJWDj5qpKQbA&id=fpRXbAn101&type=0')
       if(response) {
         console.log('TIMED PROCESS EXECUTED')
-        res.send(response)
-      }
-    }, 90000)
+    }
+    res.json({ message: 'Sleep Timer Initiated' })
+    }, 900000)
   })
