@@ -11,6 +11,7 @@ import seriesController from './eskart/controllers/series'
 import ventrellaController from './ventrella/controllers/main'
 import memeController from './nerdmeme/controllers/meme'
 import trekDexController from './trekdex/controllers/main'
+import homeTheaterController from './household/controllers/home-theater'
 
 export const app: Express = express()
 
@@ -51,3 +52,6 @@ app.use('/api/v1/nerdmeme/meme', memeController)
 
 // trekdex
 app.use('/api/v1/trekdex', trekDexController)
+
+// home theater
+app.use('/api/v1/home-theater')

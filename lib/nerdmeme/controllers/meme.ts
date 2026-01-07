@@ -30,13 +30,6 @@ export default Router()
 
   })
 
-  .get('/timeout-test', () => {
-    console.log('HIT THE ROUTE!!!!');
-    setTimeout(() => {
-      console.log('TIMED PROCESS EXECUTED!!!')
-    }, 90000)
-  })
-
   .get('/custom/:memeArr', (req, res) => {
     const { memeArr } = req.params;
     Content.getCustomMeme(JSON.parse(memeArr))
