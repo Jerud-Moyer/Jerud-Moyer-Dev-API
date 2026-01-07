@@ -10,6 +10,8 @@ export default Router()
       if(response) {
         console.log('TIMED PROCESS EXECUTED')
     }
+    console.log('DOES THIS EVER RUN HERE????')
     res.json({ message: 'Sleep Timer Initiated' })
-    }, 900000)
+    }, 5400000)
+    // 90 minutes
   })
