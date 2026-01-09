@@ -1,17 +1,16 @@
 import { Router } from 'express'
 
 export default Router()
-  .get('/set-sleep-timer', (req, res) => {
+  .get('/set-sleep-timer', async(req, res) => {
     console.log('TV SLEEP TIMER INITIATED');
+    res.json({ message: 'Sleep Timer Initiated' })
     let response = null
     const shutdownUrl: string = process.env.STEAMING_TV_SHUTDOWN_URL as string
     setTimeout(async() => {
-      response = await fetch('https://app1.sofabaton.com/app/keypress?node_id=fpRXbAn3WZxJWDj5qpKQbA&id=fpRXbAn101&type=0')
+      response = await fetch(shutdownUrl)
       if(response) {
         console.log('TIMED PROCESS EXECUTED')
-    }
-    console.log('DOES THIS EVER RUN HERE????')
-    res.json({ message: 'Sleep Timer Initiated' })
+      }
     }, 5400000)
     // 90 minutes
   })
