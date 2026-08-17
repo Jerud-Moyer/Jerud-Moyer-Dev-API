@@ -5,8 +5,9 @@ export default Router()
     console.log('TV SLEEP TIMER INITIATED');
     res.json({ message: 'Sleep Timer Initiated' })
     let response = null
+    const shutdownUrl: string = process.env.STEAMING_TV_SHUTDOWN_URL as string
+    console.log('WHAT URL???? ', shutdownUrl)
     setTimeout(async() => {
-      const shutdownUrl: string = process.env.STEAMING_TV_SHUTDOWN_URL as string
       response = await fetch(shutdownUrl)
       if(response) {
         console.log('TIMED PROCESS EXECUTED')
