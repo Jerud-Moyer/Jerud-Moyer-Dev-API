@@ -12,6 +12,6 @@ export default Router()
       if(response) {
         console.log('TIMED PROCESS EXECUTED')
       }
-    }, 54000000)
+    }, 5400000)
     // 90 minutes 5400000
   })
